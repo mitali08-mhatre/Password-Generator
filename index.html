@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="block">
+        <div class="container">
+            <h3>Password Generator</h3>
+            <div class="us">
+                <label for="">User Name : </label>
+                <input type="text"  id="us" placeholder="Enter Name">
+            </div>
+            <div class="dob">
+                <label for="">Date of Birth : </label>
+                <input type="date" id="dob">
+            </div>
+            <button id="gpass" onclick="generatepass()">Genrate Password </button>
+        </div>
+    </div>
+    
+    <script>
+        let us= document.getElementById('us');
+        let dob= document.getElementById('dob');
+        let gpass= document.getElementById('gpass');
+        function generatepass(){
+            let usres= String(us.value);
+            let dobres= String(dob.value);
+            let pass=usres.slice(0,2)+ dobres.slice(0,4);
+            gpass.textContent= "Your Password: "+ pass;
+            gpass.style.color="re"
+        }
+    </script>
+</body>
+</html>
